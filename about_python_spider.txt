@@ -1,0 +1,73 @@
+BeautifulSoup 对象表示的是一个文档的全部内容.大部分时候,可以把它当作 Tag 对象，
+需要安装BeautifulSoup和lxml,然后通过如下命令导入：
+from bs4 import BeautifulSoup
+如果BeautifulSoup用的是3.*版本，那么要这样写：from BeautifulSoup import BeautifulSoup，
+建议生产环境使用python2.x+BeautifulSoup3.X，稳定性较好。
+用BeautifulSoup包装一段html：
+>>> html = """
+... <html><head><title>The Dormouse's story</title></head>
+... <body>
+... <p class="title" name="dromouse"><b>The Dormouse's story</b></p>
+... <p class="story">Once upon a time there were three little sisters; and their names were
+... <a href="http://example.com/elsie" class="sister" id="link1"><!-- Elsie --></a>,
+... <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
+... <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
+... and they lived at the bottom of a well.</p>
+... <p class="story">...</p>
+... """
+>>>
+>>> soup=BeautifulSoup(html)
+
+然后就可以通过BeautifulSoup操作html了，Beautiful Soup将复杂HTML文档转换成一个复杂的树形结构,
+每个节点都是Python对象,所有对象可以归纳为4种:Tag, NavigableString, BeautifulSoup, Comment
+
+Tag 就是html中的任何一个标签<p class="title" name="dromouse"><b>The Dormouse's story</b></p>，
+NavigableString 就是标签中的内容，如The Dormouse's story
+BeautifulSoup 表示的就是一个文档的全部内容.
+Comment表示内容为注释的标签<a class="sister" href="http://example.com/elsie" id="link1"><!-- Elsie --></a>，
+可以通过如下命令查看它的类型：
+>>> print type(soup2.a.string)
+<class 'bs4.element.Comment'>
+
+友好格式输入html文本：
+>>> print soup.prettify()
+
+>>> print soup.p
+<p class="title" name="dromouse"><b>The Dormouse's story</b></p>
+>>>
+>>>
+>>> print soup.p.name
+p
+>>>
+>>> print soup.p.attrs
+{'class': ['title'], 'name': 'dromouse'}
+>>>
+>>> print soup.p['name']
+dromouse
+>>>
+>>>
+>>> print soup.p.string
+The Dormouse's story
+>>>
+
+遍历子节点--.content和.children：
+for child in soup.body.contents[3].children : print child
+
+父节点：
+>>> print soup.title.parent
+<head><title>The Dormouse's story</title></head>
+
+全部父节点：
+>>> for a in soup.title.parents : print a.name
+
+兄弟节点(带上s表示全部兄弟节点):
+.next_sibling(s)和.previous_sibling(s)
+
+搜索功能：
+
+CSS选择器：
+通过标签名查找：print soup.select('title')
+通过类名查找：print soup.select('.sister')
+通过ID名查找：print soup.select('#link1')
+组合查找：print soup.select('p #link1')
+通过子标签查找：print soup.select('p > a')

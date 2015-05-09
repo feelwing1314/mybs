@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ZEALER</title>
+    <meta name="keywords" content="zealer 视频 手机 王自如 测评 Techmessager"/>
+    <meta name="description" content="ZEALER - 独立测评机构"/>
+
+
+    <link rel="stylesheet" type="text/css" href="http://static.zealer.com/css/jquery.jscrollpane.min.css?20140211"/>
+    <link rel="stylesheet" type="text/css" href="http://static.zealer.com/css/flexslider.min.css?20140211"/>
+    <link href="http://static.zealer.com/page/css/libs_ce539.css" rel="stylesheet" type="text/css"/>
+    <link href="http://static.zealer.com/page/css/global_4eae3a83f1.css" rel="stylesheet" type="text/css"/>
+    <link href="http://static.zealer.com/page/css/page_2f15218835.css" rel="stylesheet" type="text/css"/>
+
+    <link rel="icon" href="/favicon.ico"/>
+    <script>
+var STATIC_HOST = 'http://static.zealer.com/';
+
+    </script>
+    <script>
+//移动设备判断
+var isMobile = {  
+    Android: function() {  
+        return navigator.userAgent.match(/Android/i) ? true : false;  
+    },  
+    BlackBerry: function() {  
+        return navigator.userAgent.match(/BlackBerry/i) ? true : false;  
+    },  
+    iOS: function() {  
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;  
+    },  
+    Windows: function() {  
+        return navigator.userAgent.match(/IEMobile/i) ? true : false;  
+    },  
+Phone: function() {
+return navigator.userAgent.match(/Mobile/i) ? true : false; 
+},
+    any: function() {  
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.Windows() || isMobile.Phone());  
+    }  
+};
+
+    </script>
+</head>
+<body>
+<script>
+var www_host = 'http://www.zealer.com/';
+
+</script>
+<div class="global_header">
+    <div class="header_inner">
+        <a class="inner_logo" href="/">
+        </a>
+
+        <div class="inner_bar" style="display:none;">
+            <a href="/" class="">
+                首页
+            </a>
+            <a href="http://fix.zealer.com/" class="" target="_blank">
+                维修
+            </a>
+            <a href="/post/1" class="">
+                加入我们
+            </a>
+            <a href="/post/152" class="bar_3">
+                联系我们
+                <span></span>
+            </a>
+            <a href="javascript:void(0);" class="globalLogin logoutCss">
+                登录
+            </a>
+            <a class="logoutCss" href="http://www.zealer.com/reg?from=Index&redirect=http://www.zealer.com/">
+                注册
+            </a>
+<span class="bar_user loginCss" style="display: none;">
+<img src="http://static.zealer.com/images/mb_pic30.gif" alt="会员头像"/>
+               &nbsp;
+<span class="user_active">
+<a href="/user?type=info" class="active_name">xxxxxx</a>
+<a href="/user/logout">退出</a>
+</span>
+</span>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+</div>
+<div class="mask_bg">
+    <div class="mask_content mask_login">
+        <div class="pop_close pop_image"></div>
+        <div class="wrap2">
+            <div class="logo2">
+            </div>
+
+            <div class="main">
+                <div class="main_left">
+                    <div class="left_row" style="margin-bottom: 20px;">
+                        <input type="text" class="row_text" name="username" placeholder="用户名"/>
+                    </div>
+                    <div class="left_row">
+                        <input type="password" class="row_text password" name="password" placeholder="密码"/>
+                    </div>
+                    <div class="left_row">
+                        <div class="re_me select">
+                            <a href="javascript:;">记住登录状态</a>
+                        </div>
+                        <!--div class="foget">
+                        <a href="#">忘记密码</a>
+                        </div-->
+                    </div>
+                    <div class="left_row" style="margin-bottom: 0">
+                        <button class="sub2_btn" id="logBtn"></button>
+                    </div>
+
+                </div>
+                <div class="main_right">
+                    <a href="http://www.zealer.com/reg?form=www&redirect=http://www.zealer.com/" class="toreg">
+                    </a>
+
+                    <a href="https://api.weibo.com/oauth2/authorize?client_id=786032768&redirect_uri=http%3A%2F%2Fwww.zealer.com%2Flogin%3Ftype%3DSINA%26cb%3D%26from%3Dhttp%3A%2F%2Fwww.zealer.com%2F&response_type=code"
+                       class="weibo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <div style="display:none" class="repic_mask">
+        <div class="mask_bg">
+            <div class="mask_content mask_repic">
+                <div class="pop_close pop_image"></div>
+                <div class="wrap2">
+                    <div class="uWrap">
+                        <div class="change">
+                            <form class="form1">
+                                <input type="button" value="选择" class="choose" id="fileupload"/>
+                            </form>
+                        </div>
+                        <div style="height: 2px; width: 0px; background: #006ea3;" class="user_progressbar"></div>
+                        <div class='img_wrap' style="height: 0px; overflow: hidden;">
+                            <div id="picImg" class="clear" style="margin:20px;"></div>
+                            <form class="form2">
+                                <div class="saveOrCancel">
+                                    <input type="hidden" value="0" name="pid"/>
+                                    <input type="button" value="保存" id="repic_send" class="send"/>
+                                    <input type="button" value="取消" id="repic_cancle" class="cancle"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="clear">
+        <div id="main">
+            <div class="user_inner clear">
+                <div class="inner_left">
+
+                    <div class="user_side">
+                        <div class="side_avatar">
+                            <a href="javascript:void(0);">
+                                <div class="nei">
+                                    <img src="http://static.zealer.com/images/mb_pic250.gif" alt="头像"/>
+                                </div>
+
+                                <div class="avatar_hover">
+                                    <span>修改图像</span>
+                                </div>
+                                <div class="avatar_img">
+                                </div>
+                            </a>
+                        </div>
+                        <ul class="side_nav_q">
+                            <li><a href="user?type=info"><span class="span1"></span>feelwing1314</a></li>
+                            <li><a href="user?type=change"><span class="span2"></span>修改密码</a></li>
+                            <li><a href="user?type=inbox"><span class="span3"></span>私信收件箱<em>&nbsp;</em></a></li>
+                            <li><a href="user?type=spam"><span class="span4"></span>私信垃圾箱</a></li>
+                            <li><a href="user?type=mycom"><span class="span5"></span>我发出的评论<em>&nbsp;(2)</em></a></li>
+                            <li><a href="user?type=incom"><span class="span6"></span>我收到的评论<em>&nbsp;(0)</em></a></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <div class="inner_right">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="global_footer">
+    <div class="footer_inner clear">
+        <div class="inner_copyr">
+            <span class="inner_tech">&nbsp;</span><em>|</em>&nbsp;<span class="inner_copy">&nbsp;</span><em>|</em>&nbsp;<span
+                class="inner_no">粤ICP备12076188号&nbsp;</span>
+
+        </div>
+        <div class="inner_follow">
+            <a class="follow_wx" href="javascript:;"></a>
+            <a class="follow_wb" href="http://weibo.com/zealerchina" target="_blank"></a>
+            <img src="http://static.zealer.com/page/img/img_e90c7c41_qr_code.png" class="qr_code">
+        </div>
+    </div>
+</div>
+
+
+<script src="http://static.zealer.com/js/jquery-1.10.2.min.js"></script>
+<script src="http://static.zealer.com/js/jquery.flexslider-min.js?20140211"></script>
+<script src="http://static.zealer.com/js/jquery.scrollto.min.js?20140211"></script>
+<script src="http://static.zealer.com/js/jquery.mousewheel.min.js?20140211"></script>
+<script src="http://static.zealer.com/js/jquery.jscrollpane.min.js?20140211"></script>
+<script src="http://static.zealer.com/js/bootstrap.min.js?20140211"></script>
+<script src="http://static.zealer.com/page/js/libs_87cd3.js"></script>
+<script src="http://static.zealer.com/page/js/global_4eae3773e2.js"></script>
+<script src="http://static.zealer.com/page/js/page_2f152ab780.js"></script>
+
+<script>
+$(function(){
+
+ Z.use('user/user');Z.use('global/headerNew');   Z.use('global/footer');   
+});
+
+</script>
+
+<script>
+var getUrl = null;
+var static_host = 'http://static.zealer.com/';
+var www_host = 'http://www.zealer.com/';
+
+</script>
+<link type="text/css" rel="stylesheet" href="http://static.zealer.com/css/jquery.Jcrop.min.css?js_version=1.00101"/>
+<script src="http://static.zealer.com/js/jquery.Jcrop.min.js?js_version=1.00101"></script>
+<script src="http://static.zealer.com/js/jquery.uploadify.min.js?js_version=1.00101"></script>
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F93a776aa5a5632380561feba017dd90f' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-42162857-1', 'zealer.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
