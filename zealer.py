@@ -26,7 +26,7 @@ class Zealer:
         self.cookies = cookielib.CookieJar()
         self.postdata = urllib.urlencode({
             "username": "404961061@qq.com",
-            "password": "13875674621"
+            "password": "138********"
         })
         # 通过构建opener，利用open方法实现了登录
         self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cookies))
